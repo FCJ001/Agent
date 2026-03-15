@@ -12,8 +12,9 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from loguru import logger
 from pydantic import BaseModel, Field, field_validator
-
-
+from dotenv import load_dotenv
+#通过 python-dotenv 库读取 env 文件中的环境变量，并加载到当前运行的环境中
+load_dotenv(encoding='utf-8')
 class Product(BaseModel):
     """
     产品信息模型类，用于定义产品的结构化数据格式
