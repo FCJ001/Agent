@@ -10,7 +10,9 @@ messages 参数支持如下格式：
 from langchain_core.prompts import ChatPromptTemplate
 import os
 from langchain.chat_models import init_chat_model
-
+from dotenv import load_dotenv
+# 加载.env文件中的环境变量（指定编码，避免中文乱码）
+load_dotenv(encoding='utf-8')
 chatPromptTemplate = ChatPromptTemplate(
     [
         ("system", "你是一个AI开发工程师，你的名字是{name}。"),
