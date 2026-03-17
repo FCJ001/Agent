@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain_community.chat_message_histories import RedisChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
@@ -6,6 +7,7 @@ from langchain_core.runnables import RunnableConfig
 import os
 import redis  #导入原生redis库，pip install redis==5.3.1
 from loguru import logger
+load_dotenv(encoding='utf-8')
 
 REDIS_URL = "redis://localhost:26379"
 # 创建原生Redis客户端,decode_responses 控制 Redis 返回数据的类型：False 返字节串，True 返字符串

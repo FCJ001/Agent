@@ -5,12 +5,14 @@
 会根据用户输入中是否包含英语、韩语等关键词，来选择对应的提示词进行处理。根据判断结果，
 再执行不同的逻辑分支
 """
+from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from loguru import logger
 from langchain_core.runnables import RunnableBranch
 import os
+load_dotenv(encoding='utf-8')
 
 # 构建提示词
 english_prompt = ChatPromptTemplate.from_messages([
