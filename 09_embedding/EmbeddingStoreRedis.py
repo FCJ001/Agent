@@ -1,8 +1,11 @@
 # pip install langchain-community dashscope redis redisvl
 import os
+
+from dotenv import load_dotenv
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.vectorstores import Redis
 from langchain_core.documents import Document
+load_dotenv(encoding='utf-8')
 
 # 1. 初始化阿里千问 Embedding 模型
 embeddings = DashScopeEmbeddings(

@@ -1,7 +1,8 @@
-
+from dotenv import load_dotenv
 from langchain_redis import RedisConfig, RedisVectorStore
 from langchain_community.embeddings import DashScopeEmbeddings
 import os
+load_dotenv(encoding='utf-8')
 
 # 初始化 Embedding 模型
 # 1. 初始化阿里千问 Embedding 模型

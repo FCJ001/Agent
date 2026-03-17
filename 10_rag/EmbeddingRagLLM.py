@@ -1,12 +1,13 @@
 # pip install unstructured
 # pip install docx2txt
 # pip install python-docx
+from dotenv import load_dotenv
 from langchain.chat_models  import  init_chat_model
 import os
-
+load_dotenv(encoding='utf-8')
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain_core.prompts import PromptTemplate
-from langchain_classic.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter
 from langchain_core.runnables import RunnablePassthrough
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.vectorstores import Redis
