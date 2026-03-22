@@ -20,11 +20,16 @@ LangChain1.0 核心组件：
 """
 
 import os
+
+from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda
 from langchain.tools import tool
+
+load_dotenv(encoding='utf-8')
+
 
 # ===================== 通义千问配置（完全不变） =====================
 llm = ChatOpenAI(
